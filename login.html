@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<body>
+    <section class="loginHeader">
+        <nav> 
+            <a href="service.html"> <img src="pollifylogo.jpg"></a> 
+            <div class="nav-links" id="navLinks">
+                <!--Close bar icon for small screen-->
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul> 
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./about.html">ABOUT US</a></li>
+                    <li><a href="./service.html">SERVICE</a></li>
+                    <li><a href="./Gallery.html">HELP</a></li>
+                    <li><a href="./SignUp.html">SIGNUP</a></li>
+                    <li><a href="./Login.html">LOGIN</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="button" id="loginButton">Login</button>
+            <p id="errorMessage" class="error" style="display: none;"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginButton").addEventListener("click", function() {
+            // Retrieve username and password from the form
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Validate the username and password (you can modify this logic based on your requirements)
+            if (username === "your_username" && password === "your_password") {
+                // Authentication successful
+                // Redirect the user to a dashboard or another page
+                window.location.href = "dashboard.html";
+            } else {
+                // Invalid credentials
+                document.getElementById("errorMessage").innerText = "Invalid username or password";
+                document.getElementById("errorMessage").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
