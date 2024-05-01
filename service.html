@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<body>
+
+    <section class="serviceHeader">
+        <nav>
+            <a href="service.html"><img src="pollifylogo.jpg"></a>
+            <div class="nav-links" id="navLinks">
+                <!--Close bar icon for small screen-->
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="./index.html">HOME</a></li>
+                    <li><a href="./about.html">ABOUT US</a></li>
+                    <li><a href="./service.html">SERVICE</a></li>
+                    <li><a href="./Gallery.html">HELP</a></li>
+                    <li><a href="./SignUp.html">SIGNUP</a></li>
+                    <li><a href="./Login.html">LOGIN</a></li>
+                </ul>
+            </div>
+            <!--Menu bars icon for small screen-->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Pollify brings to you</h1>
+            <p></p>
+        </div>
+    </section>
+
+    <section class="Services">
+        <h1>Services</h1>
+        <p>Pollify is an app that helps makes decisions to be taken with everyone's input.</p>
+        <p>Our mission is to achieve inclusivity, convenience, and gather real-time responses.</p>
+        <p>This platform strives to ensure that your experiences with respect to polls! Sign up and enjoy our unique features.</p>
+        <p>"Inclusivity in decision making!"</p>
+
+        <!--Live Polls, Surveys , Quizzes , Analytics-->
+        <div class="row">
+            <div class="Services-col">
+                <h3>Live Polls</h3>
+                <p>Create and launch polls within seconds, no prior setup required.</p>
+            </div>
+            <div class="Services-col">
+                <h3>Surveys</h3>
+                <p>Build surveys with no technical skills required.</p>
+            </div>
+            <div class="Services-col">
+                <h3>Quizzes</h3>
+                <p>Create engaging quizzes with various question types including multiple choice, true/false, short answer, and more.</p>
+            </div>
+            <div class="Services-col">
+                <h3>Analytics</h3>
+                <p>Turn raw data into actionable insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <div class="heading">
+            <h1>Icons Basketball</h1>
+            <p>Brings to you</p>
+        </div>
+        <div class="divider">
+            <div class="card">
+                <img src="Polls.jpg">
+                <h3>POLLS</h3>
+                <p>Create polls in real-time</p>
+            </div>
+            <div class="card">
+                <img src="Surveys.jpg">
+                <h3>SURVEYS</h3>
+                <p>Build surveys with no technical skills required</p>
+            </div>
+        </div>
+        <!--second gallery row-->
+        <div class="divider">
+            <div class="card">
+                <img src="pollifylogo.jpg">
+                <h3>QUIZZES</h3>
+                <p>Create quizzes for easier and quicker feedbacks</p>
+            </div>
+            <div class="card">
+                <img src="Analytics.jpg">
+                <h3>ANALYTICS</h3>
+                <p>Turn raw data into actionable insights</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Opening hours -->
+    <section class="contact">
+        <div class="row-col">
+            <h1>Contact Us</h1>
+            <p><b>Email</b>: pollify@gmail.com</p>
+            <p><b>Phone</b>: +233 54 098 5123</p>
+            <p><b>Instagram</b>: @Pollify_polls</p>
+            <p><b>Facebook</b>: Pollify Polls</p>
+        </div>
+    </section>
+
+    <p align="center">&copy; Pollify's Copyright 2024</p>
+
+    <!-- JavaScript for Toggle menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+</body>
+</html>
