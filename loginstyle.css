@@ -1,9 +1,6 @@
 /* Style for the logo */
-
 .logo img {
-
-    width: 150px; /* Adjust the width as needed */
-
+    width: 150px;
 }
 
 
@@ -11,11 +8,8 @@
 /* Style for the navigation bar */
 
 .navbar {
-
-    background-color: #333; /* Change to your desired color */
-
-    color: #fff; /* Text color */
-
+    background-color: #333; 
+    color: #fff;
 }
 
 
@@ -23,31 +17,22 @@
 /* Style for the navigation links */
 
 .navbar ul {
-
     list-style-type: none;
-
     margin: 0;
-
     padding: 0;
-
 }
 
 
 
 .navbar ul li {
-
     display: inline;
-
     padding: 10px;
-
 }
 
 
 
 .navbar ul li a {
-
     color: #fff;
-
     text-decoration: none;
 
 }
@@ -55,7 +40,5 @@
 
 
 .navbar ul li a:hover {
-
-    color: #ccc; /* Change to your desired hover color */
-
+    color: #ccc;
 }
