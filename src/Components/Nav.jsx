@@ -6,10 +6,9 @@ const NavComponent = () => {
             <ul> 
                 <li><Link to='/'>HOME</Link></li>
                 <li><Link to='/about'>ABOUT US</Link></li>
-                <li><Link to='/service.html'>SERVICE</Link></li>
-                <li><Link to='/pollhandler.html'>HELP</Link></li>
-                <li><Link to='/SignUpbout.html'>SIGNUP</Link></li>
-                <li><Link to='/Login.html'>LOGIN</Link></li>
+                <li><Link to='/service'>SERVICE</Link></li>
+                <li><Link to='/SignUp'>SIGNUP</Link></li>
+                <li><Link to='/login'>LOGIN</Link></li>
             </ul>
         </>
     );
