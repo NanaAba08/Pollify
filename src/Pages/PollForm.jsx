@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
-
+import apiService from '../apiService';
 
 function PollForm() {
   const [question, setQuestion] = useState('');
@@ -11,15 +11,26 @@ function PollForm() {
 
   const handleAnswerChange = (index, value) => {
     const updatedAnswers = [...answers];
-    updatedAnswers[index] = value;
+    updatedAnswers[index] = { text: value }; // match the expected structure
     setAnswers(updatedAnswers);
   };
 
-  const submitPoll = (event) => {
+  const submitPoll = async (event) => {
     event.preventDefault();
-    console.log('Question:', question);
-    console.log('Answers:', answers);
-    setThankYouVisible(true);
+    try {
+      const pollData = {
+        identifier: 'Fun', // adjust as needed
+        data: {}, // if you have additional data, you can include it here
+        question,
+        options: answers
+      };
+      // Make API call to submit the poll
+      await apiService.createPoll(pollData);
+      setThankYouVisible(true);
+    } catch (error) {
+      console.error('Failed to submit poll:', error.message);
+      // Handle error, maybe show an error message to the user
+    }
   };
 
   const sharePoll = () => alert('Poll shared!');
@@ -51,7 +62,7 @@ function PollForm() {
                 <React.Fragment key={index}>
                   <input
                     type="text"
-                    value={answer}
+                    value={answer.text || ''}
                     onChange={(e) => handleAnswerChange(index, e.target.value)}
                     required
                     placeholder="Type your answer here"
