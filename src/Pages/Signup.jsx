@@ -1,44 +1,44 @@
-// Signup.jsx
-import { useState } from 'react';
+import { useState } from 'react'
+import '../App.css';
+import NavComponent from '../Components/Nav';
 
 const Signup = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: ''
-  });
+    return (
+        <section className="signupHeader">
+            <nav>
+                <a href="signup.html">
+                    <img src="pollifylogo.jpg" alt="Pollify Logo" />
+                </a>
+                <div className="nav-links" id="navLinks">
+                    <i className="fa fa-close" onClick={() => {}}></i> 
+                    <NavComponent />
+                </div>
+            </nav>
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      // Send form data to backend API for signup
-      const response = await fetch('/api/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-      const data = await response.json();
-      // Handle success or error response from the server
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="username" value={formData.username} onChange={handleChange} placeholder="Username" />
-      <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
-      <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Password" />
-      <button type="submit">Sign Up</button>
-    </form>
-  );
+            <div className="signup-container">
+                <form className="signup-form" action="signup.php" method="POST">
+                    <h2>Sign Up</h2>
+                    <div className="form-group">
+                        <label htmlFor="username">Username</label>
+                        <input type="text" id="username" name="username" required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" name="password" required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required />
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+    );
 };
 
 export default Signup;
-

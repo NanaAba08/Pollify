@@ -1,44 +1,55 @@
-// Signup.jsx
-import { useState } from 'react';
+import { useState } from 'react'
+import '../App.css';
+import NavComponent from '../Components/Nav';
 
-const Signup = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: ''
-  });
+const Login = () => {
+    // Event handler for login button click
+    const handleLogin = () => {
+        // Retrieve username and password from the form
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+        // Validate the username and password (you can modify this logic based on your requirements)
+        if (username === "your_username" && password === "your_password") {
+            // Authentication successful
+            // Redirect the user to a dashboard or another page
+            window.location.href = "dashboard.html";
+        } else {
+            // Invalid credentials
+            document.getElementById("errorMessage").innerText = "Invalid username or password";
+            document.getElementById("errorMessage").style.display = "block";
+        }
+    };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      // Send form data to backend API for signup
-      const response = await fetch('/api/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-      const data = await response.json();
-      // Handle success or error response from the server
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
+    return (
+        <div className="loginHeader">
+            <section className="loginHeader">
+                <nav>
+                    <a href="login.html"><img src="pollifylogo.jpg" alt="Pollify Logo" /></a>
+                    <div className="nav-links" id="navLinks">
+                        <i className="fa fa-close" onClick={() => {}}></i>
+                        <NavComponent />
+                    </div>
+                </nav>
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="username" value={formData.username} onChange={handleChange} placeholder="Username" />
-      <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
-      <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Password" />
-      <button type="submit">Sign Up</button>
-    </form>
-  );
+            <div className="login-container">
+                <form className="login-form">
+                    <h2>Login</h2>
+                    <div className="form-group">
+                        <label htmlFor="username">Username</label>
+                        <input type="text" id="username" name="username" required />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" name="password" required />
+                    </div>
+                    <button type="button" onClick={handleLogin}>Login</button>
+                    <p id="errorMessage" className="error" style={{ display: "none" }}></p>
+                </form>
+            </div>
+            </section>
+        </div>
+    );
 };
 
-export default Signup;
-
+export default Login;
