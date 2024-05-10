@@ -46,7 +46,7 @@ Currently, two official plugins are available:
    - Run npm install to install the required dependencies.
    - Start the frontend server using npm start.
 
-3. Access the website by visiting http://localhost:3000 in your browser.
+3. Access the website by visiting http://localhost:5173/ in your browser.
    
 # Contributing
 Contributions are welcome! Please follow these guidelines when contributing:
