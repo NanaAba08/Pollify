@@ -39,7 +39,7 @@ const PollForm = () => {
                 <button onClick={submitVote} disabled={!question || !selectedOption || voted}>Submit Vote</button>
                 {voted && <div id="result">Thank you for voting!</div>}
             </div>
-        </div>
+        </div>   
     );
 };
 
