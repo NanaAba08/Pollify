@@ -1,46 +1,77 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 import React from "react";
-import '../App.css';
+import '../App.css'; 
 
-const PollForm = () => {
-    const [question, setQuestion] = useState('');
-    const [selectedOption, setSelectedOption] = useState('');
-    const [voted, setVoted] = useState(false);
+function PollForm() {
+  const [question, setQuestion] = useState('');
+  const [answers, setAnswers] = useState(['']);
+  const [thankYouVisible, setThankYouVisible] = useState(false);
 
-    const submitVote = () => {
-        // Simulate sending the vote to the backend
-        // For demonstration purposes, just log the selected option and question
-        console.log("Question:", question);
-        console.log("Voted for:", selectedOption);
-        setVoted(true);
-    };
+  const addAnswer = () => setAnswers([...answers, '']);
 
-    return (
-        <div className="container">
-            <h1>PollForm</h1>
-            <div className="poll">
-                <label htmlFor="question">Enter your poll question:</label>
-                <input type="text" id="question" value={question} onChange={(e) => setQuestion(e.target.value)} />
-                <h2>{question}</h2>
-                <div className="options">
-                    <div className="option">
-                        <input type="radio" id="option1" name="poll" value="JavaScript" 
-                            checked={selectedOption === "JavaScript"} 
-                            onChange={() => setSelectedOption("JavaScript")} />
-                        <label htmlFor="option1">Yes</label>
-                    </div>
-                    <div className="option">
-                        <input type="radio" id="option2" name="poll" value="Python" 
-                            checked={selectedOption === "Python"} 
-                            onChange={() => setSelectedOption("Python")} />
-                        <label htmlFor="option2">No</label>
-                    </div>
-                </div>
-                <button onClick={submitVote} disabled={!question || !selectedOption || voted}>Submit Vote</button>
-                {voted && <div id="result">Thank you for voting!</div>}
+  const handleAnswerChange = (index, value) => {
+    const updatedAnswers = [...answers];
+    updatedAnswers[index] = value;
+    setAnswers(updatedAnswers);
+  };
+
+  const submitPoll = (event) => {
+    event.preventDefault();
+    console.log('Question:', question);
+    console.log('Answers:', answers);
+    setThankYouVisible(true);
+  };
+
+  const sharePoll = () => alert('Poll shared!');
+
+  return (
+    <div className="PollForm-container">
+      <nav>
+        <a href="/">
+          <img src="pollifylogo.jpg" alt="Pollify Logo" />
+        </a>
+      </nav>
+
+      {!thankYouVisible ? (
+        <>
+          <h1>Create a Poll in Seconds</h1>
+          <form id="PollForm" onSubmit={submitPoll}>
+            <label htmlFor="question">Type your question here:</label>
+            <input
+              type="text"
+              id="question"
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              required
+            />
+
+            <label>Type your answers here:</label>
+            <div id="answersContainer">
+              {answers.map((answer, index) => (
+                <React.Fragment key={index}>
+                  <input
+                    type="text"
+                    value={answer}
+                    onChange={(e) => handleAnswerChange(index, e.target.value)}
+                    required
+                    placeholder="Type your answer here"
+                  />
+                </React.Fragment>
+              ))}
             </div>
-        </div>   
-    );
-};
+            <button type="button" onClick={addAnswer}>Add Answer</button>
+            <button type="submit">Submit</button>
+          </form>
+        </>
+      ) : (
+        <div id="thankYouMessage">
+          <h3>Thank you for participating!</h3>
+        </div>
+      )}
+
+      <button className="share-button" onClick={sharePoll}>Share Poll</button>
+    </div>
+  );
+}
 
 export default PollForm;
