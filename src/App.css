@@ -285,33 +285,33 @@ nav img{ /*logo*/
 	background-position: center;
 	background-size: cover;
 	position: relative;
-}
-nav{ /*Links*/
+  }
+  nav{ /*Links*/
 	display: flex;
 	padding: 2%;
 	justify-content: space-between;
 	align-items: center;
-
-} 
-nav img{ /*logo*/
+  
+  } 
+  nav img{ /*logo*/
 	width: 150px;
-}
-.nav-links{ /*Nav Links align*/
+  }
+  .nav-links{ /*Nav Links align*/
 	flex: 1;
 	text-align: right;
-}
-.nav-links ul li{ /*Links Horizontal*/
+  }
+  .nav-links ul li{ /*Links Horizontal*/
 	list-style: none;
 	display: inline-block;
 	padding: 8px 12px;
 	position: relative;
-}
-.nav-links ul li a { /*Links font & coloring*/
+  }
+  .nav-links ul li a { /*Links font & coloring*/
 	color: white;
 	text-decoration: none;
 	font-size: 18px;
-}
-.nav-links ul li::after{ /*Orange line under links*/
+  }
+  .nav-links ul li::after{ /*Orange line under links*/
 	content: "";
 	width: 0%;
 	height: 2px;
@@ -319,11 +319,11 @@ nav img{ /*logo*/
 	display: block;
 	margin: auto;
 	transition: 0.5s;
-}
-.nav-links ul li:hover::after{ /*Hover line under links*/
+  }
+  .nav-links ul li:hover::after{ /*Hover line under links*/
 	width: 100%;
-}
-.text-box{ /*home text - Icons */
+  }
+  .text-box{ /*home text - Icons */
 	width: 90%;
 	color: white;
 	position: absolute;
@@ -331,47 +331,47 @@ nav img{ /*logo*/
 	left: 50%;
 	transform: translate(-50%,-50%);
 	text-align: center;
-}
-.text-box h1{ /*Font increase - Heading Icons */
+  }
+  .text-box h1{ /*Font increase - Heading Icons */
 	font-size: 62px;
 	}
-.text-box p { /*Font increase - Para*/
+  .text-box p { /*Font increase - Para*/
 	margin: 10px 0 40px;
 	font-size: 30px;
 	color: white;
-}
+  }
 	nav .fa { /*hiding icons for larger screens*/
-			display: none;
-		}
-
+		display: none;
+	  }
+  
 	@media(max-width: 700px){ /* adjusting web for smaller devices */
-		.text-box h1{
-			font-size:20px;
-		}
-		.nav-links ul li { /*adj heading */
-			display: block;
-		}
-		.nav-links {
-			position: absolute;
-			background: orangered;
-			height: 100hv;
-			width: 200px;
-			top: 0;
-			right: -200px;
-			text-align: left;
-			z-index: 2;
-			transition: 1s;
-		}
-		nav .fa{ /*Enabling cross for small screens*/
-			display: block;
-			color: white;
-			margin: 10px;
-			font-size: 22px;
-			cursor: pointer;
-		}
+	  .text-box h1{
+		font-size:20px;
+	  }
+	  .nav-links ul li { /*adj heading */
+		display: block;
+	  }
+	  .nav-links {
+		position: absolute;
+		background: orangered;
+		height: 100hv;
+		width: 200px;
+		top: 0;
+		right: -200px;
+		text-align: left;
+		z-index: 2;
+		transition: 1s;
+	  }
+	  nav .fa{ /*Enabling cross for small screens*/
+		display: block;
+		color: white;
+		margin: 10px;
+		font-size: 22px;
+		cursor: pointer;
+	  }
 	}
 	.nav-links ul{ /*Side menu*/
-		padding: 30px;
+	  padding: 30px;
 	}
 	
 	.gallery-header{
@@ -725,6 +725,54 @@ nav img{ /*logo*/
 		background-size: cover;
 		position: relative;
 		}
+		.signup-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 90vh;
+		  }
+		  
+		  .signup-form {
+			background-color: #fff;
+			padding: 15px;
+			border-radius: 8px;
+			box-shadow: 5 0 10px rgba(0, 0, 0, 0.1);
+		  }
+		  
+		  .signup-form h2 {
+			text-align: center;
+			margin-bottom: none;
+		  }
+		  
+		  .form-group {
+			margin-bottom: 1px;
+		  }
+		  
+		  .form-group label {
+			display: block;
+			font-weight: bold;
+		  }
+		  
+		  .form-group input {
+			width: 90%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 6px;
+		  }
+		  
+		  button {
+			width: 100%;
+			padding: 15px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		  }
+		  
+		  button:hover {
+			background-color: #0056b3;
+		  }
   /* Reset default browser styles */
 * {
   margin: 0;
@@ -820,3 +868,70 @@ footer {
   text-align: center;
   padding: 20px 0;
 }
+/* PollForm styles */
+.pollForm-body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+.container {
+	background: linear-gradient(to bottom, #0078d4, #0056b3);
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	color: #fff;
+	text-align: center;
+	padding: 30px;
+  }
+  
+  .poll-question {
+	font-size: 24px;
+	margin-bottom: 20px;
+  }
+  
+  .poll-form label {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: #fff;
+  }
+  
+  .vote-button {
+	background-color: #0056b3;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 18px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease-in-out;
+  }
+  
+  .vote-button:hover {
+	background-color: #0078d4;
+  }
+  
+  .results {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .results-title {
+	font-size: 20px;
+  }
+  
+  .results-count {
+	display: flex;
+	justify-content: space-between;
+	font-size: 18px;
+	margin-top: 10px;
+  }
+  
+  .count {
+	font-weight: bold;
+  }
