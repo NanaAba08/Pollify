@@ -40,18 +40,13 @@ Currently, two official plugins are available:
 1. Clone this repository to your local machine:
    `git clone https://github.com/NanaAba08/Pollify.git`
 
-2. Backend Setup:
-   - Navigate to the backend directory.
-   - Create a virtual environment and set the required environment variables.
-   - Start the backend server.
-
-3. Frontend Setup:
+2. Frontend Setup:
    - Navigate to the frontend directory.
    - Ensure Node.js is installed on your machine.
    - Run npm install to install the required dependencies.
    - Start the frontend server using npm start.
 
-4. Access the website by visiting http://localhost:3000 in your browser.
+3. Access the website by visiting http://localhost:3000 in your browser.
    
 # Contributing
 Contributions are welcome! Please follow these guidelines when contributing:
